@@ -16,10 +16,14 @@ def calculate(operation, num1, num2=None):
     """Simple calculator CLI"""
 
     try:
-        if operation == "add":
-            result = add(num1, num2)
-        elif operation == "subtract":
-            result = subtract(num1, num2)
+        if operation == "add": 
+            result = add(num1, num2) 
+        elif operation == "subtract": 
+            result = subtract(num1, num2) 
+        elif operation == "multiply": 
+            result = multiply(num1, num2) 
+        elif operation == "divide": 
+            result = divide(num1, num2) 
         else:
             click.echo(f"Unknown operation: {operation}")
             sys.exit(1)
