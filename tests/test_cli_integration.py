@@ -35,8 +35,7 @@ class TestCLIIntegration:
         assert result.returncode == 1
         # CLI prints a generic unexpected error message for this case
         assert result.stdout.strip().startswith("Unexpected error:")
-
-class TestCLIIntegration: 
+ 
     def test_cli_multiply_integration(self): 
         """Test CLI can perform multiplication""" 
         result = self.run_cli("multiply", "5", "3") 
