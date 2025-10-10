@@ -201,7 +201,7 @@ jobs:
         uses: actions/download-artifact@v4 
         with: 
           name: coverage-html 
-          path: artifacts/coverage-html continue-on-error: true
+          path: artifacts/coverage-html
       - name: Download lint report (if present) 
         uses: actions/download-artifact@v4 
         with: 
