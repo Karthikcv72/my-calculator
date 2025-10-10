@@ -206,12 +206,12 @@ jobs:
         uses: actions/download-artifact@v4 
         with: 
           name: lint-report 
-          path: artifacts/lint continue-on-error: true
+          path: artifacts/lint
       - name: Download security report (if present) 
         uses: actions/download-artifact@v4 
         with: 
           name: security-report 
-          path: artifacts/security continue-on-error: true
+          path: artifacts/security
       - name: "Simple package: compile, zip and upload" 
         run: | 
           echo " Creating simple deployment package..." 
