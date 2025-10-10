@@ -1,9 +1,9 @@
 name: CI/CD pipeline
 on:
   push:
-    branches: [""]
+    branches: ["**"]
   pull_request:
-    branches: [""]
+    branches: ["**"]
 
 jobs:
   # Build stage: prepares Python and installs dependencies
@@ -101,7 +101,7 @@ jobs:
           echo "Saved lint report to lint_report.txt"
 
           score_line=$(grep -E "rated at" lint_report.txt || true)
-          score=$(echo "$score_line" | sed -n 's/.rated at \([0-9]\+\.[0-9]\+\)\/10./\1/p')
+          score=$(echo "$score_line" | sed -n 's/.*rated at \([0-9]\+\.[0-9]\+\)\/10.*/\1/p')
           echo "Pylint score: ${score:-not-found}"
           if [ -z "$score" ]; then
             echo "Could not determine pylint score"; exit 1
